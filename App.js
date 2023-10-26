@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Modal, Text, Linking, Image } from 'react-native';
+import { View, StyleSheet, Modal, Text, Linking, Image, ImageBackground } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Avatar, Card, Button } from 'react-native-paper';
 
@@ -20,23 +20,21 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Card style={styles.card}>
-        <Image
-          source={require('./images/unnamed.jpg')} // Replace with the path to your local image
-          style={styles.image}
-        />
-        <Card.Title title="Open in Web Page" left={LeftContent} />
-        <Card.Content>
-          <View style={styles.buttonContainer}>
+        <ImageBackground
+          source={require('././images/unnamed.png')} // Replace with the path to your local image
+          style={styles.imageBackground}
+        >
+          <Card.Content style={styles.transparentContent}>
             <Button
               mode="contained"
-              onPress={openLinkInBrowserHandler}
               style={styles.button}
-              contentStyle={styles.buttonContent}
+              labelStyle={styles.buttonLabel}
+              onPress={openLinkInBrowserHandler}
             >
-             Ar
+              View AR
             </Button>
-          </View>
-        </Card.Content>
+          </Card.Content>
+        </ImageBackground>
       </Card>
     </View>
   );
@@ -50,24 +48,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   card: {
-    width: 300, // Adjust the width as needed
+    width: 400, // Adjust the width as needed
   },
-  image: {
+  imageBackground: {
     height: 200, // Adjust the height as needed
-    width: 300,
+    width: 400,
   },
-  buttonContainer: {
-    alignItems: 'flex-end',
+  transparentContent: {
+    backgroundColor: 'transparent', // Transparent background for Card.Content
   },
   button: {
-    backgroundColor: 'purple', // Set the background color to purple
-    borderRadius: 50, // Makes the button circular
-    width: 80, // Adjust the width to make it circular
+    backgroundColor: 'lightblue', // Light blue background color for the button
+    borderColor: 'transparent', // Transparent border
+    borderRadius: 20, // Round the button's borders
+    width: 160, // Button width
+    alignSelf: 'right', // Align the button to the right
+    top: 70,
+    left: 200,
   },
-  buttonContent: {
-    paddingVertical: 8, // Adjust padding as needed
-  },
-  separator: {
-    height: 20,
+  buttonLabel: {
+    color: 'white', // Text color of the button
   },
 });
