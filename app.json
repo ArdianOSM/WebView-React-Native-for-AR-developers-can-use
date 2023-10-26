@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "WebView",
-    "slug": "WebView",
+    "slug": "webview",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ardianosm.WebView"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c3e9f30b-7748-4c7d-81a3-0b2cd1a3c8e6"
+      }
+    },
+    "owner": "ardim"
   }
 }
