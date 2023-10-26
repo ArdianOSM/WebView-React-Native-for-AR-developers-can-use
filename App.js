@@ -26,14 +26,16 @@ export default function App() {
         />
         <Card.Title title="Open in Web Page" left={LeftContent} />
         <Card.Content>
-          <Button
-            mode="contained"
-            onPress={openLinkInBrowserHandler}
-            style={styles.button}
-            contentStyle={styles.buttonContent}
-          >
-            Open Link in Browser
-          </Button>
+          <View style={styles.buttonContainer}>
+            <Button
+              mode="contained"
+              onPress={openLinkInBrowserHandler}
+              style={styles.button}
+              contentStyle={styles.buttonContent}
+            >
+             Ar
+            </Button>
+          </View>
         </Card.Content>
       </Card>
     </View>
@@ -54,9 +56,13 @@ const styles = StyleSheet.create({
     height: 200, // Adjust the height as needed
     width: 300,
   },
+  buttonContainer: {
+    alignItems: 'flex-end',
+  },
   button: {
-    backgroundColor: '#007AFF', // Adjust the background color as needed
-    marginTop: 10, // Adjust spacing as needed
+    backgroundColor: 'purple', // Set the background color to purple
+    borderRadius: 50, // Makes the button circular
+    width: 80, // Adjust the width to make it circular
   },
   buttonContent: {
     paddingVertical: 8, // Adjust padding as needed
